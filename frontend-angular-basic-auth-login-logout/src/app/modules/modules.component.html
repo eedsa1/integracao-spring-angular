@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div class="container">
+  <h3>All Modules</h3>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let module of modules">
+          <td>{{module.id}}</td>
+          <td>{{module.code}}</td>
+          <td>{{module.name}}</td>
+          <td><button class="btn btn-success" (click)="updateModule(module.id)">Update</button></td>
+          <td><button class="btn btn-warning" (click)="deleteModule(module.id)">Delete</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+    <div class="row">
+      <button class="btn btn-success" (click)="addModule()">Add</button>
+    </div>
+  </div>
+</div>

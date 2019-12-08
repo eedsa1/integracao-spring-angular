@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div class="container">
+  <h3>All Students</h3>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Registration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{student.id}}</td>
+          <td>{{student.name}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.registration}}</td>
+          <td><button class="btn btn-success" (click)="updateStudent(student.id)">Update</button></td>
+          <td><button class="btn btn-warning" (click)="deleteStudent(student.id)">Delete</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+    <div class="row">
+      <button class="btn btn-success" (click)="addStudent()">Add</button>
+    </div>
+  </div>
+</div>

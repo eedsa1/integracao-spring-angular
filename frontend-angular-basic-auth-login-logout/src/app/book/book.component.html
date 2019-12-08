@@ -1,0 +1,25 @@
+<h3>Book</h3>
+<div class="container">
+  <form (ngSubmit)="!courseForm.invalid && saveSourse()" #courseForm="ngForm">
+    <div>
+      <div class="alert alert-warning" *ngIf="courseForm.dirty && courseForm.invalid">Enter valid values</div>
+      <div class="alert alert-warning" *ngIf="courseForm.dirty && description.invalid">Enter atleast 5 characters in
+        Title</div>
+    </div>
+    <fieldset class="form-group">
+      <label>Id</label>
+      <input type="text" class="form-control" #id="ngModel" [(ngModel)]="book.id" name="id">
+    </fieldset>
+    <fieldset class="form-group">
+      <label>Title</label>
+      <input type="text" #description="ngModel" [(ngModel)]="book.title" class="form-control" name="description"
+        required="required" minlength="5">
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Author</label>
+        <input type="text" #description="ngModel" [(ngModel)]="book.author" class="form-control" name="description"
+          required="required" minlength="5">
+      </fieldset>
+    <button class="btn btn-success" type="submit">Save</button>
+  </form>
+</div>

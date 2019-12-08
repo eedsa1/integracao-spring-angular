@@ -1,0 +1,25 @@
+<h3>Module</h3>
+<div class="container">
+  <form (ngSubmit)="!moduleForm.invalid && saveSourse()" #moduleForm="ngForm">
+    <div>
+      <div class="alert alert-warning" *ngIf="moduleForm.dirty && moduleForm.invalid">Enter valid values</div>
+      <div class="alert alert-warning" *ngIf="moduleForm.dirty && name.invalid">Enter atleast 5 characters in
+        Name</div>
+    </div>
+    <fieldset class="form-group">
+      <label>Id</label>
+      <input type="text" class="form-control" #id="ngModel" [(ngModel)]="module.id" name="id">
+    </fieldset>
+    <fieldset class="form-group">
+      <label>Code</label>
+      <input type="text" #code="ngModel" [(ngModel)]="module.code" class="form-control" name="code"
+        required="required" minlength="5">
+    </fieldset>
+    <fieldset class="form-group">
+      <label>Name</label>
+      <input type="text" #name="ngModel" [(ngModel)]="module.name" class="form-control" name="name"
+        required="required" minlength="5">
+    </fieldset>
+    <button class="btn btn-success" type="submit">Save</button>
+  </form>
+</div>
